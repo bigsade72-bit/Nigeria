@@ -534,53 +534,83 @@ src="https://www.facebook.com/tr?id=1089039574891097&ev=PageView&noscript=1"
 <style>
   .products-grid {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
     justify-content: center;
     align-items: flex-start;
-    flex-direction: row;
+    gap: 20px;
   }
 
+  /* Desktop: two cards + upgrade CTA in one row */
+  @media (min-width: 768px) {
+    .products-grid {
+      flex-wrap: nowrap;
+    }
+    .product-card {
+      flex: 0 0 calc(50% - 20px);
+      max-width: none;
+    }
+    .upgrade-cta {
+      flex: 0 0 auto;
+      align-self: center;
+      margin-top: 30px;    /* lower the arrow/text */
+      font-size: 1.2em;    /* smaller so cards fit */
+    }
+  }
+
+  /* Mobile: stack cards */
   @media (max-width: 767px) {
     .products-grid {
       flex-direction: column;
       align-items: center;
+    }
+    .product-card {
+      flex: 1 1 100%;
+    }
+    .upgrade-cta {
+      margin: 20px 0;
+      font-size: 1.5em;
+      align-self: center;
+    }
+    .upgrade-cta .arrow::before {
+      content: '↓';
     }
   }
 
   .dramatic-price {
     white-space: nowrap;
   }
-
   .dramatic-price .price-amount {
     font-size: 3em;
   }
-
   .dramatic-price .monthly-price {
     font-size: 1.2em;
     margin-left: 4px;
     align-self: flex-end;
   }
 
+  /* Fit second card price on one line */
+  .product-card:nth-of-type(2) .dramatic-price .price-amount {
+    font-size: 2em;
+  }
+  @media (max-width: 767px) {
+    .product-card:nth-of-type(2) .dramatic-price .price-amount {
+      font-size: 1.8em;
+    }
+    .product-card:nth-of-type(2) .dramatic-price .monthly-price {
+      font-size: 0.9em;
+    }
+  }
+
   .upgrade-cta {
     font-family: 'Segoe UI', sans-serif;
-    font-size: 1.8em;
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-
   .upgrade-cta .arrow::before {
     content: '→';
     margin-left: 10px;
     font-size: 1.3em;
-  }
-
-  @media (max-width: 767px) {
-    .upgrade-cta .arrow::before {
-      content: '↓';
-    }
   }
 
   .details-content ul {
@@ -589,63 +619,31 @@ src="https://www.facebook.com/tr?id=1089039574891097&ev=PageView&noscript=1"
     margin: 0;
     text-align: left;
   }
-
   .details-content li {
     position: relative;
     margin-bottom: 0.5em;
     padding-left: 1.5em;
   }
-
   .details-content li::before {
     content: '✓';
     position: absolute;
     left: 0;
     color: #ff4444;
   }
-
   .details-content ul ul {
     padding-left: 20px;
     margin-top: 4px;
   }
-
   .details-content ul ul li::before {
     content: none;
   }
-
   .details-content > ul > li {
     color: #ff4444;
     font-weight: bold;
   }
-
   .details-content > ul > li ul li {
     color: #fff;
     font-weight: normal;
-  }
-
-  .products-grid .product-card:nth-of-type(1) .details-content ul li {
-    color: #fff;
-  }
-
-  .products-grid .product-card:nth-of-type(1) .details-content ul li::before {
-    color: #ff4444;
-  }
-
-  /* Adjust second card’s price to fit on one line */
-  .products-grid .product-card:nth-of-type(2) .dramatic-price .price-amount {
-    font-size: 2em;
-  }
-
-  .products-grid .product-card:nth-of-type(2) .dramatic-price .monthly-price {
-    font-size: 1em;
-  }
-
-  @media (max-width: 767px) {
-    .products-grid .product-card:nth-of-type(2) .dramatic-price .price-amount {
-      font-size: 1.8em;
-    }
-    .products-grid .product-card:nth-of-type(2) .dramatic-price .monthly-price {
-      font-size: 0.9em;
-    }
   }
 </style>
 
@@ -653,21 +651,17 @@ src="https://www.facebook.com/tr?id=1089039574891097&ev=PageView&noscript=1"
 
   <!-- 🔴 Complete Facebook Marketing Course -->
   <div class="product-card" style="
-    flex: 1 1 300px;
-    max-width: 400px;
-    border: 1px solid #aa0000;
-    background: #000;
-    color: #fff;
-    padding: 20px;
-    font-family: 'Segoe UI', sans-serif;
+    background:#000;
+    border:1px solid #aa0000;
+    color:#fff;
+    padding:20px;
+    font-family:'Segoe UI',sans-serif;
   ">
     <img src="https://i.postimg.cc/dV5x7Z0J/Scale.jpg"
          alt="Complete Facebook Marketing Course"
          style="width:100%; border-radius:8px; border:2px solid #aa0000;">
 
-    <h2 style="margin:15px 0 5px;">
-      Complete Facebook Marketing Course
-    </h2>
+    <h2 style="margin:15px 0 5px;">Complete Facebook Marketing Course</h2>
 
     <div style="margin-top:15px;">
       <div onclick="toggleDetails(this)"
@@ -698,7 +692,7 @@ src="https://www.facebook.com/tr?id=1089039574891097&ev=PageView&noscript=1"
       gap:12px;
       margin:15px 0;
     ">
-      <span style="text-decoration:line-through; color:#888; font-size:1em;">
+      <span style="text-decoration:line-through; color:#888;">
         ₦99,000
       </span>
       <span class="dramatic-price" style="
@@ -737,10 +731,8 @@ src="https://www.facebook.com/tr?id=1089039574891097&ev=PageView&noscript=1"
 
   <!-- 🟢 Complete 7 Day Launch Kit -->
   <div class="product-card" style="
-    flex: 1 1 300px;
-    max-width: 400px;
-    border:1px solid #aa0000;
     background:#000;
+    border:1px solid #aa0000;
     color:#fff;
     padding:20px;
     font-family:'Segoe UI',sans-serif;
@@ -753,7 +745,7 @@ src="https://www.facebook.com/tr?id=1089039574891097&ev=PageView&noscript=1"
       Complete 7 Day Launch Kit
     </h2>
 
-    <div class="details-section" style="margin-top:10px;">
+    <div style="margin-top:15px;">
       <div onclick="toggleDetails(this)"
            style="cursor:pointer; color:#ff4444; font-weight:bold;">
         Details ▼
@@ -769,49 +761,34 @@ src="https://www.facebook.com/tr?id=1089039574891097&ev=PageView&noscript=1"
         <ul>
           <li>Full Meta ads course
             <ul>
-              <li>Complete 4 hours, 19 chapters course on how to run ads effectively from start to finish</li>
+              <li>4h across 19 chapters, start-to-finish</li>
             </ul>
           </li>
           <li>7-figure copy-paste ads template
             <ul>
               <li>100 Copy & Paste Ads</li>
-              <li>Proven templates</li>
               <li>Instant download</li>
             </ul>
           </li>
           <li>YouTube Ads
             <ul>
               <li>50+ Template Scripts</li>
-              <li>Video Scripts</li>
               <li>Bonus AI Master Class</li>
             </ul>
           </li>
           <li>SMS Marketing
             <ul>
-              <li>eBook</li>
-              <li>Prompt Pack</li>
-              <li>Checklist</li>
-              <li>Toolstack</li>
-              <li>Workbook</li>
-              <li>Guide</li>
+              <li>eBook, toolstack & guide</li>
             </ul>
           </li>
           <li>Email Marketing
             <ul>
-              <li>2 eBooks</li>
-              <li>1000+ email Templates</li>
-              <li>Cold Email Workbook</li>
-              <li>Prompt Pack</li>
-              <li>Toolstack</li>
-              <li>Checklist</li>
+              <li>2 eBooks & 1000+ templates</li>
             </ul>
           </li>
           <li>TikTok Ads
             <ul>
-              <li>Mini course on TikTok Ads Manager</li>
-              <li>Step-by-Step Guide eBook</li>
-              <li>High-Converting Ads eBook</li>
-              <li>Viral TikTok Marketing eBook</li>
+              <li>Mini-course & viral kit</li>
             </ul>
           </li>
         </ul>
@@ -822,9 +799,9 @@ src="https://www.facebook.com/tr?id=1089039574891097&ev=PageView&noscript=1"
       display:flex;
       align-items:center;
       gap:12px;
-      margin-bottom:10px;
+      margin:15px 0;
     ">
-      <span style="text-decoration:line-through; color:#888; font-size:1em;">
+      <span style="text-decoration:line-through; color:#888;">
         ₦350,000
       </span>
       <span class="dramatic-price" style="
@@ -869,10 +846,18 @@ src="https://www.facebook.com/tr?id=1089039574891097&ev=PageView&noscript=1"
 <!-- END: Shared Details Toggle Script -->
 
 <!-- BEGIN: What's Included Title -->
-<h2 style="color: #ffffff; font-size: 2.2em; font-weight: 700; text-align: center; margin: 1em 0;">
+<h2 style="
+  color:#fff;
+  font-size:2.2em;
+  font-weight:700;
+  text-align:center;
+  margin:1em 0;
+">
   What's Included
 </h2>
 <!-- END: What's Included Title -->
+
+
 
 
 <!-- 🌟🔴🩰🔵 BEGIN PRODUCT GRID 🔴🩰🔵🌟 -->

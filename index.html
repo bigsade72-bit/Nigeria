@@ -537,13 +537,19 @@ src="https://www.facebook.com/tr?id=1089039574891097&ev=PageView&noscript=1"
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    flex-direction: row;
   }
 
   @media (max-width: 767px) {
     .products-grid {
       flex-direction: column;
+      align-items: center;
     }
+  }
+
+  .dramatic-price {
+    white-space: nowrap;
   }
 
   .dramatic-price .price-amount {
@@ -624,17 +630,18 @@ src="https://www.facebook.com/tr?id=1089039574891097&ev=PageView&noscript=1"
     color: #ff4444;
   }
 
-  /* Keep second card’s “→ ₦9,000 /mo” on one line */
+  /* Adjust second card’s price to fit on one line */
   .products-grid .product-card:nth-of-type(2) .dramatic-price .price-amount {
-    font-size: 2.5em;
+    font-size: 2em;
   }
+
   .products-grid .product-card:nth-of-type(2) .dramatic-price .monthly-price {
     font-size: 1em;
   }
 
   @media (max-width: 767px) {
     .products-grid .product-card:nth-of-type(2) .dramatic-price .price-amount {
-      font-size: 2em;
+      font-size: 1.8em;
     }
     .products-grid .product-card:nth-of-type(2) .dramatic-price .monthly-price {
       font-size: 0.9em;
@@ -736,7 +743,7 @@ src="https://www.facebook.com/tr?id=1089039574891097&ev=PageView&noscript=1"
     background:#000;
     color:#fff;
     padding:20px;
-    font-family:'Segoe UI', sans-serif;
+    font-family:'Segoe UI',sans-serif;
   ">
     <img src="https://i.postimg.cc/nrtcFnrM/Complete-Biz-Launch-Kit.jpg"
          alt="Complete 7 Day Launch Kit"
@@ -866,10 +873,6 @@ src="https://www.facebook.com/tr?id=1089039574891097&ev=PageView&noscript=1"
   What's Included
 </h2>
 <!-- END: What's Included Title -->
-
-
-
-
 
 
 <!-- 🌟🔴🩰🔵 BEGIN PRODUCT GRID 🔴🩰🔵🌟 -->

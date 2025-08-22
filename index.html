@@ -3,111 +3,108 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eco-Friendly Essentials</title>
+  <title>Rock & Roll Merch</title>
   <link
     rel="icon"
-    href="https://thumbs.dreamstime.com/b/eco-friendly-letter-e-logo-leaves-water-drop-modern-design-featuring-sustainable-conscious-theme-395089175.jpg"
+    href="https://cdn.pixabay.com/photo/2013/07/12/12/58/guitar-146117_1280.png"
   />
   <style>
-    /* Reset & Base */
+    /* Reset */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
     body {
-      font-family: Arial, sans-serif;
-      color: #2d2d2d;
-      line-height: 1.6;
+      background: #111;
+      color: #eee;
+      font-family: "Arial Black", sans-serif;
+      line-height: 1.5;
     }
     a {
       text-decoration: none;
-      color: inherit;
+      color: #f40;
     }
-
     /* Header */
     .site-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 1rem 2rem;
-      background: #fff;
+      background: #000;
       position: sticky;
       top: 0;
-      z-index: 10;
-      border-bottom: 1px solid #eee;
+      z-index: 100;
+      border-bottom: 2px solid #333;
     }
     .site-header .logo {
-      height: 50px;
+      height: 60px;
     }
     .nav-list {
       list-style: none;
       display: flex;
-      gap: 1.5rem;
+      gap: 2rem;
     }
     .nav-list a {
-      font-weight: bold;
-      color: #2d2d2d;
+      font-size: 0.95rem;
       transition: color 0.2s;
     }
     .nav-list a:hover {
-      color: #4caf50;
+      color: #ff6a00;
     }
-
     /* Hero */
     .hero {
       position: relative;
-      background-image: url("https://i.postimg.cc/sgT70nyw/enchanted-rainy-forest-stockcake.jpg");
-      background-size: cover;
-      background-position: center;
+      background: url("https://cdn.pixabay.com/photo/2017/11/10/05/31/music-293019_1280.jpg")
+        center/cover no-repeat;
       height: 80vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      color: #fff;
     }
     .hero::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(0, 0, 0, 0.6);
     }
-    .hero .hero-content {
+    .hero-content {
       position: relative;
       max-width: 600px;
       padding: 0 1rem;
     }
     .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px #000;
     }
     .hero p {
       font-size: 1.2rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
     }
     .btn {
       display: inline-block;
       padding: 0.75rem 1.5rem;
-      background: #4caf50;
+      background: #f40;
       color: #fff;
       border-radius: 4px;
       font-weight: bold;
       transition: background 0.2s;
     }
     .btn:hover {
-      background: #43a047;
+      background: #e03500;
     }
-
     /* Products */
     #products {
       padding: 4rem 2rem;
-      background: #f9f9f9;
+      background: #1a1a1a;
     }
     #products h2 {
       text-align: center;
       margin-bottom: 2rem;
-      font-size: 2rem;
+      font-size: 2.5rem;
+      color: #f40;
     }
     .product-grid {
       display: grid;
@@ -115,36 +112,35 @@
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     }
     .product {
-      background: #fff;
+      background: #222;
       border-radius: 6px;
       overflow: hidden;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
       text-align: center;
       padding-bottom: 1rem;
     }
     .product img {
       width: 100%;
-      display: block;
-      object-fit: cover;
       height: 200px;
+      object-fit: cover;
     }
     .product h3 {
       margin: 1rem 0 0.5rem;
-      font-size: 1.25rem;
+      font-size: 1.3rem;
     }
     .product p {
       font-size: 0.95rem;
       padding: 0 1rem;
-      color: #555;
+      color: #ccc;
+      margin-bottom: 1rem;
     }
-
     /* About */
     #about {
-      padding: 4rem 2rem;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       gap: 2rem;
+      padding: 4rem 2rem;
     }
     .about-image {
       flex: 1 1 300px;
@@ -152,30 +148,30 @@
     .about-image img {
       width: 100%;
       border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     }
     .about-text {
       flex: 2 1 300px;
     }
     .about-text h2 {
-      font-size: 2rem;
+      font-size: 2.2rem;
       margin-bottom: 1rem;
-      color: #4caf50;
+      color: #f40;
     }
     .about-text p {
       font-size: 1rem;
-      color: #555;
+      color: #ccc;
     }
-
     /* Features */
     #features {
       padding: 4rem 2rem;
-      background: #f9f9f9;
+      background: #1a1a1a;
     }
     #features h2 {
       text-align: center;
       margin-bottom: 2rem;
-      font-size: 2rem;
+      font-size: 2.5rem;
+      color: #f40;
     }
     .feature-grid {
       display: grid;
@@ -184,53 +180,51 @@
       text-align: center;
     }
     .feature {
-      background: #fff;
+      background: #222;
       padding: 1.5rem;
       border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     }
     .feature img {
-      width: 60px;
+      width: 50px;
       margin-bottom: 1rem;
     }
     .feature h4 {
       margin-bottom: 0.5rem;
-      color: #2d2d2d;
+      color: #f40;
     }
     .feature p {
       font-size: 0.9rem;
-      color: #555;
+      color: #ccc;
     }
-
     /* Footer */
     .site-footer {
-      background: #2d2d2d;
-      color: #ccc;
+      background: #000;
+      color: #555;
       text-align: center;
       padding: 2rem;
       font-size: 0.9rem;
     }
     .site-footer a {
-      color: #4caf50;
+      color: #f40;
     }
   </style>
 </head>
-
 <body>
   <!-- HEADER -->
   <header class="site-header">
-    <a href="/">
+    <a href="#">
       <img
-        src="https://i.postimg.cc/h4m8Pbbt/geometric-leaf-logo-design-clean-lines-green-accents-white-background-flat-modern-minimalist-look-38.jpg"
-        alt="Eco Essentials Logo"
+        src="https://cdn.pixabay.com/photo/2016/02/02/18/02/guitar-1175429_1280.png"
+        alt="Rock Logo"
         class="logo"
       />
     </a>
     <nav>
       <ul class="nav-list">
-        <li><a href="#products">Products</a></li>
+        <li><a href="#products">Merch</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#features">Features</a></li>
+        <li><a href="#features">Why Us</a></li>
         <li><a href="#footer">Contact</a></li>
       </ul>
     </nav>
@@ -239,58 +233,43 @@
   <!-- HERO SECTION -->
   <section class="hero">
     <div class="hero-content">
-      <h1>Embrace a Greener Tomorrow</h1>
-      <p>
-        Discover sustainable essentials crafted with the planet in mind. Small
-        changes, big impact.
-      </p>
-      <a href="#products" class="btn">Shop Now</a>
+      <h1>Rock Your Style</h1>
+      <p>Authentic merch for true rock gods.</p>
+      <a href="#products" class="btn">Browse Merch</a>
     </div>
   </section>
 
   <!-- PRODUCTS SECTION -->
   <section id="products">
-    <h2>Featured Essentials</h2>
+    <h2>Featured Merch</h2>
     <div class="product-grid">
-      <!-- Bamboo Toothbrush -->
       <div class="product">
         <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRj4MHOOSGn3eRSKpqSfMVU2uZ_eyLpl_nmTg&s"
-          alt="Bamboo Toothbrush"
+          src="https://cdn.pixabay.com/photo/2014/12/21/23/28/guitar-picks-576274_1280.jpg"
+          alt="Guitar Pick Set"
         />
-        <h3>Bamboo Toothbrush</h3>
-        <p>
-          Biodegradable handle and activated charcoal bristles for a fresh,
-          eco-conscious smile.
-        </p>
+        <h3>Guitar Pick Set</h3>
+        <p>Assorted set of 10 premium picks for every riff.</p>
         <a href="#" class="btn">Buy Now</a>
       </div>
 
-      <!-- Reusable Tote Bag -->
       <div class="product">
         <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHUDBHEIKaxc_qE99XWyBIrxtmi23gkYZ-NA&s"
-          alt="Reusable Tote Bag"
+          src="https://cdn.pixabay.com/photo/2013/07/12/16/45/t-shirt-150244_1280.png"
+          alt="Band T-Shirt"
         />
-        <h3>Reusable Tote Bag</h3>
-        <p>
-          Durable cotton canvas tote—ditch single-use plastic and carry with
-          style.
-        </p>
+        <h3>Band T-Shirt</h3>
+        <p>Black cotton tee featuring our iconic skull logo.</p>
         <a href="#" class="btn">Buy Now</a>
       </div>
 
-      <!-- Glass Water Bottle -->
       <div class="product">
         <img
-          src="https://images-na.ssl-images-amazon.com/images/I/61aTmMx2WVL._AC_UL495_SR435,495_.jpg"
-          alt="Glass Water Bottle"
+          src="https://cdn.pixabay.com/photo/2014/04/05/10/29/vinyl-316637_1280.jpg"
+          alt="Vinyl Record"
         />
-        <h3>Glass Water Bottle</h3>
-        <p>
-          Leak-proof borosilicate glass bottle with silicone sleeve for safe,
-          sustainable hydration.
-        </p>
+        <h3>Limited-Edition Vinyl</h3>
+        <p>Crystal-clear pressing of our debut album in gatefold sleeve.</p>
         <a href="#" class="btn">Buy Now</a>
       </div>
     </div>
@@ -300,57 +279,46 @@
   <section id="about">
     <div class="about-image">
       <img
-        src="https://previews.123rf.com/images/sompongtom/sompongtom1802/sompongtom180200083/95955058-ecology-concept-hands-holding-plant-a-tree-sapling-with-on-ground-world-environment-day.jpg"
-        alt="Hands Holding a Sapling"
+        src="https://cdn.pixabay.com/photo/2016/11/29/09/32/band-1867918_1280.jpg"
+        alt="Band Backstage"
       />
     </div>
     <div class="about-text">
-      <h2>Our Mission</h2>
+      <h2>About the Band</h2>
       <p>
-        At Eco Essentials, we believe everyday choices shape the future of our
-        planet. That’s why for every purchase, we plant a tree and champion
-        zero-waste materials. Join us in nurturing a healthier, more vibrant
-        Earth.
+        Fierce riffs, raw energy, and sold-out arenas. We live to tear down
+        walls and raise roofs. Join the ride and wear our legacy.
       </p>
     </div>
   </section>
 
   <!-- FEATURES SECTION -->
   <section id="features">
-    <h2>Why Choose Us</h2>
+    <h2>Why Choose Our Merch</h2>
     <div class="feature-grid">
       <div class="feature">
         <img
-          src="https://media.istockphoto.com/id/1721530216/vector/green-leaf-recycle-symbol-icon.jpg?s=612x612&w=0&k=20&c=2nAjzOpnpxIYYlyyPW6G07SFW6Z5zk94x2vba_ItLII="
-          alt="Recycled Materials Icon"
+          src="https://cdn.pixabay.com/photo/2012/04/13/00/23/diamond-31241_1280.png"
+          alt="Premium Materials"
         />
-        <h4>Recycled Materials</h4>
-        <p>
-          Each product is crafted from post-consumer waste, keeping plastic out
-          of landfills.
-        </p>
+        <h4>Premium Materials</h4>
+        <p>Genuine leather, solid-steel hardware, built to last decades.</p>
       </div>
       <div class="feature">
         <img
-          src="https://t4.ftcdn.net/jpg/14/23/48/19/360_F_1423481934_GpmqXpCXy0NjQA2diRdVSPVLBSTspI5m.jpg"
-          alt="Carbon Neutral Shipping Icon"
+          src="https://cdn.pixabay.com/photo/2013/07/12/13/15/globe-147117_1280.png"
+          alt="Worldwide Tours"
         />
-        <h4>Carbon-Neutral Shipping</h4>
-        <p>
-          We offset every shipment’s emissions, delivering your order with zero
-          added carbon footprint.
-        </p>
+        <h4>Worldwide Tours</h4>
+        <p>Shipped globally with carbon-neutral delivery.</p>
       </div>
       <div class="feature">
         <img
-          src="https://icon2.cleanpng.com/20180613/vv/aa70uvti1.webp"
-          alt="Fair Trade Certified Icon"
+          src="https://cdn.pixabay.com/photo/2016/09/02/22/58/sale-1643521_1280.png"
+          alt="Limited Edition"
         />
-        <h4>Fair Trade Certified</h4>
-        <p>
-          We partner with ethical producers, ensuring fair wages and safe
-          working conditions.
-        </p>
+        <h4>Limited Edition</h4>
+        <p>Exclusive drops—once they’re gone, they’re gone for good.</p>
       </div>
     </div>
   </section>
@@ -358,10 +326,8 @@
   <!-- FOOTER -->
   <footer id="footer" class="site-footer">
     <p>
-      © 2025 Eco Essentials &bull; <a href="#">Privacy Policy</a> &bull;
-      <a href="#">Terms of Service</a>
+      © 2025 Rock & Roll Merch • <a href="#">Privacy Policy</a> • <a href="#">Terms of Service</a>
     </p>
   </footer>
 </body>
 </html>
-```

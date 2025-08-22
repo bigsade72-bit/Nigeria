@@ -3,281 +3,365 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EcoGreen – Sustainable Goods for a Better Planet</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto&display=swap" rel="stylesheet" />
+  <title>Eco-Friendly Essentials</title>
+  <link
+    rel="icon"
+    href="https://thumbs.dreamstime.com/b/eco-friendly-letter-e-logo-leaves-water-drop-modern-design-featuring-sustainable-conscious-theme-395089175.jpg"
+  />
   <style>
     /* Reset & Base */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Poppins', sans-serif; color: #333; line-height: 1.6; }
-
-    /* Color Palette */
-    :root {
-      --primary: #2a7f62;
-      --accent: #a3c293;
-      --neutral: #f9f9f9;
-      --dark: #3a3a3a;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-
-    /* Utility */
-    a { text-decoration: none; color: inherit; }
-    img { max-width: 100%; display: block; }
-    .container { width: 90%; max-width: 1200px; margin: 0 auto; }
-    .btn { 
-      display: inline-block; 
-      background: var(--primary); 
-      color: #fff; 
-      padding: 0.75em 1.5em; 
-      border-radius: 4px; 
-      font-weight: 600; 
-      transition: background 0.3s; 
+    body {
+      font-family: Arial, sans-serif;
+      color: #2d2d2d;
+      line-height: 1.6;
     }
-    .btn:hover { background: var(--dark); }
-    section { padding: 4em 0; }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
     /* Header */
-    header { 
-      position: fixed; 
-      top: 0; 
-      width: 100%; 
-      background: #fff; 
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
-      z-index: 100; 
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid #eee;
     }
-    .nav { 
-      display: flex; 
-      align-items: center; 
-      justify-content: space-between; 
-      height: 60px; 
+    .site-header .logo {
+      height: 50px;
     }
-    .logo { font-size: 1.5em; font-weight: 600; color: var(--primary); }
-    nav ul { display: flex; gap: 1.5em; }
-    nav li { list-style: none; }
-    nav a { font-weight: 500; color: var(--dark); }
-    .hamburger { display: none; font-size: 1.5em; cursor: pointer; }
-
-    @media (max-width: 768px) {
-      nav ul { 
-        position: fixed; 
-        top: 60px; 
-        left: 0; 
-        right: 0; 
-        background: #fff; 
-        flex-direction: column; 
-        display: none; 
-        padding: 1em; 
-      }
-      nav ul.show { display: flex; }
-      .hamburger { display: block; }
+    .nav-list {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+    .nav-list a {
+      font-weight: bold;
+      color: #2d2d2d;
+      transition: color 0.2s;
+    }
+    .nav-list a:hover {
+      color: #4caf50;
     }
 
     /* Hero */
-    #hero { 
-      background: url('https://source.unsplash.com/1600x900/?sustainable,eco') center/cover no-repeat; 
-      position: relative; 
-      color: #fff; 
-      text-align: center; 
-      padding: 8em 0; 
+    .hero {
+      position: relative;
+      background-image: url("https://i.postimg.cc/sgT70nyw/enchanted-rainy-forest-stockcake.jpg");
+      background-size: cover;
+      background-position: center;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
     }
-    #hero::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.5); }
-    .hero-content { position: relative; z-index: 1; }
-    .hero-content h1 { font-size: 2.5em; margin-bottom: 0.5em; }
-    .hero-content p { font-size: 1.1em; margin-bottom: 1.5em; }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+    }
+    .hero .hero-content {
+      position: relative;
+      max-width: 600px;
+      padding: 0 1rem;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: #4caf50;
+      color: #fff;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+    .btn:hover {
+      background: #43a047;
+    }
 
     /* Products */
-    #products .grid { 
-      display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-      gap: 2em; 
+    #products {
+      padding: 4rem 2rem;
+      background: #f9f9f9;
     }
-    .card { 
-      background: #fff; 
-      border-radius: 6px; 
-      overflow: hidden; 
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
-      display: flex; 
-      flex-direction: column; 
+    #products h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
     }
-    .card img { width: 100%; }
-    .card-content { 
-      padding: 1.5em; 
-      flex-grow: 1; 
-      display: flex; 
-      flex-direction: column; 
+    .product-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     }
-    .card-content h3 { margin-bottom: 0.5em; color: var(--primary); }
-    .card-content .price { font-weight: 600; margin-bottom: 1em; }
-    .card-content .btn { align-self: start; margin-top: auto; }
+    .product {
+      background: #fff;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding-bottom: 1rem;
+    }
+    .product img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      height: 200px;
+    }
+    .product h3 {
+      margin: 1rem 0 0.5rem;
+      font-size: 1.25rem;
+    }
+    .product p {
+      font-size: 0.95rem;
+      padding: 0 1rem;
+      color: #555;
+    }
 
     /* About */
-    #about { background: var(--neutral); }
-    #about .about-grid { 
-      display: grid; 
-      grid-template-columns: 1fr 1fr; 
-      gap: 2em; 
-      align-items: center; 
+    #about {
+      padding: 4rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
     }
-    #about img { border-radius: 6px; }
-    @media (max-width: 768px) {
-      #about .about-grid { grid-template-columns: 1fr; }
+    .about-image {
+      flex: 1 1 300px;
+    }
+    .about-image img {
+      width: 100%;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+    .about-text {
+      flex: 2 1 300px;
+    }
+    .about-text h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #4caf50;
+    }
+    .about-text p {
+      font-size: 1rem;
+      color: #555;
     }
 
     /* Features */
-    #features .items { 
-      display: flex; 
-      flex-wrap: wrap; 
-      gap: 2em; 
-      justify-content: center; 
+    #features {
+      padding: 4rem 2rem;
+      background: #f9f9f9;
     }
-    .feature { flex: 1 1 200px; text-align: center; }
-    .feature img { width: 80px; margin-bottom: 1em; }
-    .feature h4 { margin-bottom: 0.5em; color: var(--dark); }
-    .feature p { font-size: 0.95em; }
-
-    /* Contact */
-    #contact form { display: flex; flex-direction: column; gap: 1em; }
-    #contact input, #contact textarea { 
-      padding: 0.75em; 
-      border: 1px solid #ccc; 
-      border-radius: 4px; 
-      width: 100%; 
+    #features h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
     }
-    #contact button { align-self: flex-start; }
+    .feature-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      text-align: center;
+    }
+    .feature {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+    .feature img {
+      width: 60px;
+      margin-bottom: 1rem;
+    }
+    .feature h4 {
+      margin-bottom: 0.5rem;
+      color: #2d2d2d;
+    }
+    .feature p {
+      font-size: 0.9rem;
+      color: #555;
+    }
 
     /* Footer */
-    footer { 
-      background: var(--dark); 
-      color: #aaa; 
-      text-align: center; 
-      padding: 2em 0; 
-      font-size: 0.9em; 
+    .site-footer {
+      background: #2d2d2d;
+      color: #ccc;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
     }
-    footer a { color: var(--accent); }
+    .site-footer a {
+      color: #4caf50;
+    }
   </style>
 </head>
-<body>
 
-  <!-- Header -->
-  <header>
-    <div class="container nav">
-      <div class="logo">EcoGreen</div>
-      <div class="hamburger" id="nav-toggle">&#9776;</div>
-      <nav>
-        <ul id="nav-menu">
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#products">Shop</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="/">
+      <img
+        src="https://i.postimg.cc/h4m8Pbbt/geometric-leaf-logo-design-clean-lines-green-accents-white-background-flat-modern-minimalist-look-38.jpg"
+        alt="Eco Essentials Logo"
+        class="logo"
+      />
+    </a>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#footer">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section id="hero">
-    <div class="container hero-content">
-      <h1>Shop Sustainable & Stylish</h1>
-      <p>Eco-friendly products crafted with love for you and the planet.</p>
-      <a href="#products" class="btn">Browse Collection</a>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Embrace a Greener Tomorrow</h1>
+      <p>
+        Discover sustainable essentials crafted with the planet in mind. Small
+        changes, big impact.
+      </p>
+      <a href="#products" class="btn">Shop Now</a>
     </div>
   </section>
 
-  <!-- Products Section -->
-  <section id="products" class="container section">
-    <h2 style="text-align:center; margin-bottom:1.5em;">Featured Products</h2>
-    <div class="grid">
-      <div class="card">
-        <img src="https://source.unsplash.com/400x300/?eco-product,plant" alt="Bamboo Toothbrush">
-        <div class="card-content">
-          <h3>Bamboo Toothbrush</h3>
-          <div class="price">$8.99</div>
-          <p>Biodegradable handle with charcoal-infused bristles for a fresh clean.</p>
-          <a href="#" class="btn">Add to Cart</a>
-        </div>
+  <!-- PRODUCTS SECTION -->
+  <section id="products">
+    <h2>Featured Essentials</h2>
+    <div class="product-grid">
+      <!-- Bamboo Toothbrush -->
+      <div class="product">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRj4MHOOSGn3eRSKpqSfMVU2uZ_eyLpl_nmTg&s"
+          alt="Bamboo Toothbrush"
+        />
+        <h3>Bamboo Toothbrush</h3>
+        <p>
+          Biodegradable handle and activated charcoal bristles for a fresh,
+          eco-conscious smile.
+        </p>
+        <a href="#" class="btn">Buy Now</a>
       </div>
-      <div class="card">
-        <img src="https://source.unsplash.com/400x300/?eco-bag" alt="Reusable Tote Bag">
-        <div class="card-content">
-          <h3>Reusable Tote Bag</h3>
-          <div class="price">$12.50</div>
-          <p>Sturdy organic cotton bag for zero-waste shopping errands.</p>
-          <a href="#" class="btn">Add to Cart</a>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://source.unsplash.com/400x300/?eco-friendly,water-bottle" alt="Glass Water Bottle">
-        <div class="card-content">
-          <h3>Glass Water Bottle</h3>
-          <div class="price">$15.00</div>
-          <p>Leak-proof, reusable glass bottle with a bamboo cap.</p>
-          <a href="#" class="btn">Add to Cart</a>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- About Section -->
-  <section id="about" class="section">
-    <div class="container about-grid">
-      <div>
-        <h2>Our Mission</h2>
-        <p>At EcoGreen, we believe small choices lead to big impact. Founded on principles of sustainability and transparency, our mission is to make eco-friendly living accessible and stylish for everyone.</p>
-        <p>From product sourcing to packaging, every step is optimized for minimal environmental footprint. Join us in building a cleaner future.</p>
+      <!-- Reusable Tote Bag -->
+      <div class="product">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHUDBHEIKaxc_qE99XWyBIrxtmi23gkYZ-NA&s"
+          alt="Reusable Tote Bag"
+        />
+        <h3>Reusable Tote Bag</h3>
+        <p>
+          Durable cotton canvas tote—ditch single-use plastic and carry with
+          style.
+        </p>
+        <a href="#" class="btn">Buy Now</a>
       </div>
-      <img src="https://source.unsplash.com/600x400/?environment,nature" alt="Our Mission">
-    </div>
-  </section>
 
-  <!-- Features Section -->
-  <section id="features" class="section">
-    <div class="container">
-      <h2 style="text-align:center; margin-bottom:1.5em;">Why Choose EcoGreen?</h2>
-      <div class="items">
-        <div class="feature">
-          <img src="https://source.unsplash.com/80x80/?recycle,icon" alt="Recycled Materials">
-          <h4>Recycled Materials</h4>
-          <p>We use post-consumer recycled fabrics and plastics in all products.</p>
-        </div>
-        <div class="feature">
-          <img src="https://source.unsplash.com/80x80/?carbon,icon" alt="Carbon Neutral">
-          <h4>Carbon Neutral Shipping</h4>
-          <p>Offsets purchased on every order to reduce carbon footprint.</p>
-        </div>
-        <div class="feature">
-          <img src="https://source.unsplash.com/80x80/?fair-trade,icon" alt="Fair Trade">
-          <h4>Fair Trade Certified</h4>
-          <p>Ethically produced by artisans with fair wages and safe conditions.</p>
-        </div>
+      <!-- Glass Water Bottle -->
+      <div class="product">
+        <img
+          src="https://images-na.ssl-images-amazon.com/images/I/61aTmMx2WVL._AC_UL495_SR435,495_.jpg"
+          alt="Glass Water Bottle"
+        />
+        <h3>Glass Water Bottle</h3>
+        <p>
+          Leak-proof borosilicate glass bottle with silicone sleeve for safe,
+          sustainable hydration.
+        </p>
+        <a href="#" class="btn">Buy Now</a>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="section">
-    <div class="container">
-      <h2 style="text-align:center; margin-bottom:1.5em;">Get in Touch</h2>
-      <form>
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea rows="4" placeholder="Your Message"></textarea>
-        <button type="submit" class="btn">Send Message</button>
-      </form>
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <div class="about-image">
+      <img
+        src="https://previews.123rf.com/images/sompongtom/sompongtom1802/sompongtom180200083/95955058-ecology-concept-hands-holding-plant-a-tree-sapling-with-on-ground-world-environment-day.jpg"
+        alt="Hands Holding a Sapling"
+      />
+    </div>
+    <div class="about-text">
+      <h2>Our Mission</h2>
+      <p>
+        At Eco Essentials, we believe everyday choices shape the future of our
+        planet. That’s why for every purchase, we plant a tree and champion
+        zero-waste materials. Join us in nurturing a healthier, more vibrant
+        Earth.
+      </p>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 EcoGreen. All rights reserved.</p>
-      <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+  <!-- FEATURES SECTION -->
+  <section id="features">
+    <h2>Why Choose Us</h2>
+    <div class="feature-grid">
+      <div class="feature">
+        <img
+          src="https://media.istockphoto.com/id/1721530216/vector/green-leaf-recycle-symbol-icon.jpg?s=612x612&w=0&k=20&c=2nAjzOpnpxIYYlyyPW6G07SFW6Z5zk94x2vba_ItLII="
+          alt="Recycled Materials Icon"
+        />
+        <h4>Recycled Materials</h4>
+        <p>
+          Each product is crafted from post-consumer waste, keeping plastic out
+          of landfills.
+        </p>
+      </div>
+      <div class="feature">
+        <img
+          src="https://t4.ftcdn.net/jpg/14/23/48/19/360_F_1423481934_GpmqXpCXy0NjQA2diRdVSPVLBSTspI5m.jpg"
+          alt="Carbon Neutral Shipping Icon"
+        />
+        <h4>Carbon-Neutral Shipping</h4>
+        <p>
+          We offset every shipment’s emissions, delivering your order with zero
+          added carbon footprint.
+        </p>
+      </div>
+      <div class="feature">
+        <img
+          src="https://icon2.cleanpng.com/20180613/vv/aa70uvti1.webp"
+          alt="Fair Trade Certified Icon"
+        />
+        <h4>Fair Trade Certified</h4>
+        <p>
+          We partner with ethical producers, ensuring fair wages and safe
+          working conditions.
+        </p>
+      </div>
     </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer" class="site-footer">
+    <p>
+      © 2025 Eco Essentials &bull; <a href="#">Privacy Policy</a> &bull;
+      <a href="#">Terms of Service</a>
+    </p>
   </footer>
-
-  <!-- Mobile Nav Toggle -->
-  <script>
-    const toggle = document.getElementById('nav-toggle');
-    const menu = document.getElementById('nav-menu');
-    toggle.addEventListener('click', () => menu.classList.toggle('show'));
-  </script>
 </body>
 </html>
+```

@@ -4,19 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rock & Roll Merch</title>
-  <link rel="icon"
-        href="https://cdn.pixabay.com/photo/2016/02/02/18/02/guitar-1175429_1280.png" />
+  <link rel="icon" href="https://img.freepik.com/premium-photo/bold-rock-band-logo-with-guitar-icon-grunge-typography-dark-solid-background_994764-230607.jpg" />
 
   <style>
     /* RESET */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
       background: #111;
       color: #eee;
       font-family: "Arial Black", sans-serif;
       line-height: 1.5;
     }
-    a { text-decoration: none; color: inherit; }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
     .btn {
       display: inline-block;
       padding: 0.75rem 1.5rem;
@@ -26,7 +32,9 @@
       transition: background 0.2s;
       font-weight: bold;
     }
-    .btn:hover { background: #e03500; }
+    .btn:hover {
+      background: #e03500;
+    }
 
     /* HEADER */
     .site-header {
@@ -40,7 +48,9 @@
       padding: 1rem 2rem;
       z-index: 10;
     }
-    .logo { height: 60px; }
+    .logo {
+      height: 60px;
+    }
     .nav-list {
       list-style: none;
       display: flex;
@@ -51,12 +61,14 @@
       font-size: 0.95rem;
       transition: color 0.2s;
     }
-    .nav-list a:hover { color: #ff6a00; }
+    .nav-list a:hover {
+      color: #ff6a00;
+    }
 
     /* HERO */
     .hero {
       position: relative;
-      background: url("https://images.unsplash.com/photo-1511376777868-611b54f68947?auto=format&fit=crop&w=1350&q=80")
+      background: url("https://www.live-production.tv/sites/default/files/styles/original_image_with_copyright/public/hard_summer_mainstage27.jpg?itok=08aA3Ltw")
                   center/cover no-repeat;
       height: 80vh;
       display: flex;
@@ -81,7 +93,10 @@
       margin-bottom: 1rem;
       text-shadow: 2px 2px #000;
     }
-    .hero p { font-size: 1.2rem; margin-bottom: 2rem; }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
 
     /* PRODUCTS */
     #products {
@@ -105,9 +120,12 @@
       overflow: hidden;
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
       text-align: center;
+      padding-bottom: 1rem;
     }
     .product img {
-      width: 100%; height: 200px; object-fit: cover;
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
     }
     .product h3 {
       margin: 1rem 0 0.5rem;
@@ -121,12 +139,16 @@
 
     /* ABOUT */
     #about {
-      display: flex; flex-wrap: wrap; gap: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
       padding: 4rem 2rem;
       align-items: center;
       background: #111;
     }
-    .about-image, .about-text { flex: 1 1 300px; }
+    .about-image, .about-text {
+      flex: 1 1 300px;
+    }
     .about-image img {
       width: 100%;
       border-radius: 6px;
@@ -137,7 +159,10 @@
       font-size: 2.2rem;
       margin-bottom: 1rem;
     }
-    .about-text p { color: #ccc; font-size: 1rem; }
+    .about-text p {
+      color: #ccc;
+      font-size: 1rem;
+    }
 
     /* FEATURES */
     #features {
@@ -170,7 +195,10 @@
       color: #f40;
       margin-bottom: 0.5rem;
     }
-    .feature p { color: #ccc; font-size: 0.9rem; }
+    .feature p {
+      color: #ccc;
+      font-size: 0.9rem;
+    }
 
     /* FOOTER */
     .site-footer {
@@ -180,7 +208,9 @@
       padding: 2rem;
       font-size: 0.9rem;
     }
-    .site-footer a { color: #f40; }
+    .site-footer a {
+      color: #f40;
+    }
   </style>
 </head>
 
@@ -188,9 +218,11 @@
   <!-- HEADER -->
   <header class="site-header">
     <a href="#">
-      <img src="https://cdn.pixabay.com/photo/2014/12/21/23/32/guitar-576276_1280.png"
-           alt="Rock Logo"
-           class="logo" />
+      <img
+        src="https://img.freepik.com/premium-photo/bold-rock-band-logo-with-guitar-icon-grunge-typography-dark-solid-background_994764-230607.jpg"
+        alt="Rock & Roll Merch Logo"
+        class="logo"
+      />
     </a>
     <nav>
       <ul class="nav-list">
@@ -217,26 +249,31 @@
     <div class="product-grid">
       <div class="product">
         <img
-          src="https://cdn.pixabay.com/photo/2014/12/21/23/28/guitar-picks-576274_1280.jpg"
-          alt="Guitar Pick Set" />
+          src="https://i.etsystatic.com/12451135/r/il/eb1856/1906881889/il_570xN.1906881889_hi8t.jpg"
+          alt="Assorted Guitar Picks"
+        />
         <h3>Guitar Pick Set</h3>
         <p>Assorted set of 10 premium picks for every riff.</p>
         <a href="#" class="btn">Buy Now</a>
       </div>
+
       <div class="product">
         <img
-          src="https://cdn.pixabay.com/photo/2013/07/12/16/45/t-shirt-150244_1280.png"
-          alt="Band T-Shirt" />
+          src="https://thrtdenim.com/cdn/shop/files/studs-2_1024x1024.jpg?v=1741636944"
+          alt="Official Band T-Shirt"
+        />
         <h3>Band T-Shirt</h3>
         <p>Black cotton tee featuring our iconic logo.</p>
         <a href="#" class="btn">Buy Now</a>
       </div>
+
       <div class="product">
         <img
-          src="https://cdn.pixabay.com/photo/2014/04/05/10/29/vinyl-316637_1280.jpg"
-          alt="Vinyl Record" />
+          src="https://purenoise.merchnow.com/cdn/shop/files/Arm_s-Length-TAWWOT-12_-_Various_36152c04-f8c9-4980-be43-82b7247fb9b5.jpg?v=1752237786&width=1080"
+          alt="Limited-Edition Vinyl Record"
+        />
         <h3>Limited-Edition Vinyl</h3>
-        <p>Gatefold pressing of our debut album.</p>
+        <p>Crystal-clear pressing of our debut album in gatefold sleeve.</p>
         <a href="#" class="btn">Buy Now</a>
       </div>
     </div>
@@ -246,8 +283,9 @@
   <section id="about">
     <div class="about-image">
       <img
-        src="https://cdn.pixabay.com/photo/2016/11/29/09/32/band-1867918_1280.jpg"
-        alt="Band Backstage" />
+        src="https://townsquare.media/site/519/files/2024/08/attachment-Untitled-design-53.jpg"
+        alt="Band Performing Live"
+      />
     </div>
     <div class="about-text">
       <h2>About the Band</h2>
@@ -264,24 +302,27 @@
     <div class="feature-grid">
       <div class="feature">
         <img
-          src="https://cdn.pixabay.com/photo/2012/04/13/00/23/diamond-31241_1280.png"
-          alt="Premium Materials" />
-        <h4>Premium Materials</h4>
+          src="https://www.creativefabrica.com/wp-content/uploads/2022/01/29/HQ-Monogram-logo-Design-V6-Graphics-24309529-1.jpg"
+          alt="Premium Quality Icon"
+        />
+        <h4>Premium Quality</h4>
         <p>Genuine leather, steel hardware, built to last decades.</p>
       </div>
       <div class="feature">
         <img
-          src="https://cdn.pixabay.com/photo/2013/07/12/13/15/globe-147117_1280.png"
-          alt="Worldwide Tours" />
+          src="https://media.istockphoto.com/id/1451232517/vector/air-travel-around-the-world-icon.jpg?s=612x612&w=0&k=20&c=ONNCdUhEn2RdzNwcEX6SptNRrCY_HYba8NEz-DWRYLQ="
+          alt="Worldwide Shipping Icon"
+        />
         <h4>Worldwide Shipping</h4>
         <p>Shipped globally with carbon-neutral delivery.</p>
       </div>
       <div class="feature">
         <img
-          src="https://cdn.pixabay.com/photo/2016/09/02/22/58/sale-1643521_1280.png"
-          alt="Limited Edition" />
-        <h4>Limited Edition</h4>
-        <p>Exclusive drops—once they’re gone, they’re gone for good.</p>
+          src="https://thumbs.dreamstime.com/b/letter-i-burning-fire-isolated-black-background-letter-i-burning-fire-digital-art-isolated-black-background-300604208.jpg"
+          alt="Exclusive Drops Icon"
+        />
+        <h4>Exclusive Drops</h4>
+        <p>Limited runs—once they’re gone, they’re gone for good.</p>
       </div>
     </div>
   </section>
